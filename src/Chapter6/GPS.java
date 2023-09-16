@@ -39,9 +39,9 @@ public class GPS {
         System.out.println(utcTime);
 
         long bjHour = (utcTime / 10000 + 8 > 24) ? (utcTime / 10000 + 8 - 24) : (utcTime / 10000 + 8);
-        utcTime -= 10000 * (utcTime / 10000);
+        utcTime %= 10000;
         long bjMinute = utcTime / 100;
-        utcTime -= 100 * bjMinute;
+        utcTime %= 100;
 
         System.out.println(bjHour + ":" + bjMinute + ":" + utcTime);
     }
