@@ -1,6 +1,4 @@
-package OOP.Chapter2.Clock.clock;
-
-import OOP.Chapter2.Clock.display.led.Display;
+package OOP.Chapter2.Clock;
 
 public class Clock {
     private Display hour;

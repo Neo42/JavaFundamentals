@@ -1,4 +1,4 @@
-package OOP.Chapter2.Clock.display.led;
+package OOP.Chapter2.Clock;
 
 public class Display {
     private int value = 0;
