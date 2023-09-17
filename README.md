@@ -2,7 +2,7 @@
 
 ## About
 
-This project contains my solutions to all the practice questions concerning Java fundamentals taught by Weng Kai at Zhejiang University.
+This project contains my solutions to all the practice questions in the two courses: Java fundamentals and OOP in Java, taught by Weng Kai at Zhejiang University.
 
 ## Folder Structure
 
