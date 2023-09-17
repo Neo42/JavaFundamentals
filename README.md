@@ -1,4 +1,4 @@
-# Java Fundamentals
+# Learning Java
 
 ## About
 
