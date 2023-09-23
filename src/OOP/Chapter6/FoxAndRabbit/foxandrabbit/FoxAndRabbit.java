@@ -1,5 +1,10 @@
 package OOP.Chapter6.FoxAndRabbit.foxandrabbit;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import OOP.Chapter6.FoxAndRabbit.animal.Animal;
@@ -15,6 +20,15 @@ public class FoxAndRabbit {
     private static JFrame frame = new JFrame();
     private static View view = new View(field);
 
+    private static class StepListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            change();
+            frame.repaint();
+        }
+    }
+
     public static void main(String[] args) {
 
         field.init();
@@ -22,20 +36,24 @@ public class FoxAndRabbit {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Fox and Rabbit");
         frame.setResizable(false);
-        frame.add(view);
+        frame.add(view, BorderLayout.CENTER);
+        JButton btnStep = new JButton("Single Step");
+        frame.add(btnStep, BorderLayout.NORTH);
+        // Anonymous Class
+        btnStep.addActionListener(new StepListener());
         frame.pack();
         frame.setVisible(true);
 
-        while (true) {
-            initMoved();
-            change();
-            frame.repaint();
-            try {
-                Thread.sleep(100); // 可以设置帧率，现在是10帧
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        // while (true) {
+        // initMoved();
+        // change();
+        // frame.repaint();
+        // try {
+        // Thread.sleep(100); // 可以设置帧率，现在是10帧
+        // } catch (InterruptedException e) {
+        // e.printStackTrace();
+        // }
+        // }
     }
 
     private static void initMoved() {
